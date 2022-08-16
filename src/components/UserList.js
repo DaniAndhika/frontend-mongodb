@@ -24,7 +24,7 @@ const UserList = () => {
   };
  
   return (
-    <div className="columns mt-5">
+    <div className="columns mt-5" id="first">
       <div className="column is-half">
         <Link to="add" className="button is-success">
           Add New
@@ -33,9 +33,12 @@ const UserList = () => {
           <thead>
             <tr>
               <th>No</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Gender</th>
+              <th>NAMA</th>
+              <th>NIM</th>
+              <th>KELAS</th>
+              <th>Semester</th> 
+              <th>Jenis Kelamin</th>
+              <th>ALAMAT</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -43,9 +46,12 @@ const UserList = () => {
             {users.map((user, index) => (
               <tr key={user._id}>
                 <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td>{user.nama}</td>
+                <td>{user.nim}</td>
+                <td>{user.kelas}</td>
+                <td>{user.semester}</td>
                 <td>{user.gender}</td>
+                <td>{user.alamat}</td>
                 <td>
                   <Link
                     to={`edit/${user._id}`}
